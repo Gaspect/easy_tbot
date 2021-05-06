@@ -23,9 +23,9 @@ See our [wiki](https://github.com/Gaspect/easy_tbot/wiki/Starting).
 
 ## Release Notes
 
-In this version all backwards compatibility was broken. But a time of stability begins.
+In some versions of the project all backwards compatibility has been destroyed but to prevent future disasters we are going to follow some rules when it comes to versioning the API.
 
-[Old version Code(1.0.2b5)](https://github.com/Backup-Gits/easy_tbot)
+We will use versions with form 'x.y.z'. The changes in the smaller versions (z) will be related to the private part of the api and will not spoil the backwards compatibility. The changes in the medium versions (y) will be related to new features that hopefully we can do on top of the previous API without spoiling the compatibility and otherwise we will notify in the documentation as it should. The big versions (x) are related to big changes in the public API that can go from huge refactorings to architecture changes or the fulfill of some milestones in the project life time.
 
 ## Thanks
 
