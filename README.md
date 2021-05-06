@@ -27,6 +27,10 @@ In some versions of the project all backwards compatibility has been destroyed b
 
 We will use versions with form 'x.y.z'. The changes in the smaller versions (z) will be related to the private part of the api and will not spoil the backwards compatibility. The changes in the medium versions (y) will be related to new features that hopefully we can do on top of the previous API without spoiling the compatibility and otherwise we will notify in the documentation as it should. The big versions (x) are related to big changes in the public API that can go from huge refactorings to architecture changes or the fulfill of some milestones in the project life time.
 
+### Verions that has not backward compatiblity
+
+TODO
+
 ## Thanks
 
 My thanks to [GowterZil](https://github.com/GowtherZil) a newborn of zen.
