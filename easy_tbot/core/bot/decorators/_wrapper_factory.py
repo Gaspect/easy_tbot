@@ -14,14 +14,17 @@ def create_wrapper(base_class, *args, **kwargs):
                 d = {'args':args}
                 d.update(kwargs)
                 return d
-
-            async def __call__(self, *args, **kwargs):
-                if inspect.iscoroutinefunction(f):
-                    return await f(*args, **kwargs)
-                return f(*args, **kwargs)
                 
             def setup(self, bot):
                 return base_class.setup(self, bot)
+        
+        class AsyncWrapper(Wrapper):
+            async def __call__(self, *args, **kwargs):
+                return await f(*args, **kwargs)
 
-        return Wrapper
+        class SyncWrapper(Wrapper):
+            def __call__(self, *args, **kwargs):
+                return f(*args, **kwargs)
+
+        return AsyncWrapper if inspect.iscoroutinefunction(f) else SyncWrapper
     return decorator
