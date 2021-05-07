@@ -1,6 +1,6 @@
 import inspect
 from functools import  update_wrapper
-from ..handlers.base import SetupMixin
+from ..setups.base import SetupMixin
 
 def create_wrapper(base_class, *args, **kwargs):
     def decorator(f):

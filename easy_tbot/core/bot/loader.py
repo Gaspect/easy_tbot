@@ -30,8 +30,8 @@ class Bot(with_metaclass(ABCMetaSingleton, Backend)):
             return getattr(self.__bot, name)
     
     
-    def add_middleware_handler(self,middleware_handler):
-        return self.__bot.add_middleware_handler(middleware_handler)
+    def add_middleware(self,middleware):
+        return self.__bot.add_middleware(middleware)
 
     def add_message_handler(self, message_handler):
         return self.__bot.add_message_handler(message_handler)

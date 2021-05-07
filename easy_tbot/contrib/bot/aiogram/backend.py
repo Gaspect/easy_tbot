@@ -32,7 +32,7 @@ class AiogramBackend(Backend):
             args = kwargs.pop('custom_filters', [])
         return decorator(*args, **kwargs)(handler)
     
-    def add_middleware_handler(self, handler):
+    def add_middleware(self, handler):
         self.dispatcher.setup_middleware(MiddlewareWrapper(handler))
     
     def add_message_handler(self, handler):

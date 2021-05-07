@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 class Backend(ABC):
 
     @abstractmethod
-    def add_middleware_handler(self, handler):
+    def add_middleware(self, middleware):
         pass
 
     @abstractmethod
