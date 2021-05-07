@@ -29,14 +29,9 @@ class Shell(with_metaclass(ABCMetaSingleton, Backend)):
             if self.type_is_command(value):
                 self.add_command(value())
 
-    def type_is_command(self, obj_type):
-        return self.__shell.type_is_command(obj_type)
 
     def add_command(self, command):
         return self.__shell.add_command(command)
-
-    def add_commands(self, *args):
-        return self.__shell.add_commands(*args)
 
     def handle_input(self, *args):
         return self.__shell.handle_input(*args)
