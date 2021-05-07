@@ -3,7 +3,7 @@ import sys
 class MultiMetaFactory:
     
     def __getitem__(self, base_class):
-        """Create a base class with a metaclass."""
+        """Create a base class with a set of many bases classes, simultaneous metaclass are allowed."""
         # This requires a bit of explanation: the basic idea is to make a dummy
         # metaclass for one level of class instantiation that replaces itself with
         # the actual metaclass.
