@@ -1,22 +1,22 @@
 import types
 import sys
-
-class MultiMeta:
+class MultiMetaFactory:
     
-    @classmethod
-    def __getitem__(cls, *args):
+    def __getitem__(self, base_class):
         """Create a base class with a metaclass."""
         # This requires a bit of explanation: the basic idea is to make a dummy
         # metaclass for one level of class instantiation that replaces itself with
         # the actual metaclass.
         metas = []
         bases = []
-        for _class in args:
+        
+        for _class in base_class:
             if issubclass(_class, type):
                 metas.append(_class)
             else:
                 bases.append(_class)
 
+        bases = tuple(bases)
         class meta_mix(*metas):
             pass
 
@@ -40,3 +40,4 @@ class MultiMeta:
 
         return type.__new__(metaclass, 'temporary_class', (), {})
 
+MultiMeta = MultiMetaFactory()
