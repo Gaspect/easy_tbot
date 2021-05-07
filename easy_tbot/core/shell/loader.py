@@ -4,8 +4,8 @@ from abc import ABCMeta
 from importlib import import_module
 from .backend import Backend
 from ..settings import Settings
-from ..tools.meta import MultiMeta
-from ..tools.meta_singleton import MetaSingleton
+from .._tools.meta import MultiMeta
+from .._tools.meta_singleton import MetaSingleton
 
 
 class Shell(MultiMeta[ABCMeta, MetaSingleton, Backend ]):
