@@ -31,7 +31,6 @@ class Shell(MultiMeta[ABCMeta, MetaSingleton, Backend ]):
             if self.type_is_command(value):
                 self.add_command(value())
 
-
     def add_command(self, command):
         return self.__shell.add_command(command)
 
