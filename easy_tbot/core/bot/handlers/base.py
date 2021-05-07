@@ -1,5 +1,4 @@
 import re
-import typing
 from abc import ABC, abstractmethod
 from functools import cached_property
 
@@ -25,11 +24,6 @@ class SetupMixin(ABC):
         pass
 
 class HandlerMixing(ABC):
-    
     @abstractmethod
-    async def handle(self, *args, **kwargs):
-        pass
-
-    @typing.final
-    async def __call__(self,*args, **kwargs):
-        return await self.handle(*args, **kwargs)
+    def __call__(self,*args, **kwargs):
+       pass

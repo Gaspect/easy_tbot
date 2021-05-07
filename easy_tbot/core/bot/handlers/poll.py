@@ -1,9 +1,9 @@
-from .base import HandlerMixing, SetupMixin
+from .base import  SetupMixin
 
-class PollHandler(HandlerMixing, SetupMixin):
+class PollHandler(SetupMixin):
     def setup(self, bot):
         bot.add_poll_handler(self)
 
-class PollAnswerHandler(HandlerMixing, SetupMixin):
+class PollAnswerHandler(SetupMixin):
     def setup(self, bot):
         bot.add_poll_answer_handler(self)

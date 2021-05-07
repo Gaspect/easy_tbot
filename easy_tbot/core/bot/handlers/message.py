@@ -1,9 +1,9 @@
-from .base import SetupMixin, HandlerMixing
+from .base import SetupMixin
 
-class MessageHandler(HandlerMixing, SetupMixin):
+class MessageHandler(SetupMixin):
     def setup(self, bot):
         bot.add_message_handler(self)
 
-class EditedMessageHandler(HandlerMixing, SetupMixin):
+class EditedMessageHandler(SetupMixin):
     def setup(self,bot):
         bot.add_edited_message_handler(self)

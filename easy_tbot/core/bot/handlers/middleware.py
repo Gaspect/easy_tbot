@@ -1,6 +1,6 @@
-from .base import SetupMixin, HandlerMixing
+from .base import SetupMixin
 
-class Middleware(HandlerMixing, SetupMixin):
+class Middleware(SetupMixin):
     def setup(self, bot):
         bot.add_middleware_handler(self)
         
