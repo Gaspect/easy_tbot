@@ -1,4 +1,4 @@
-from ._wrapperfactory import create_wrapper
+from ._wrapper_factory import create_wrapper
 from ..handlers.poll import PollHandler, PollAnswerHandler
 
 def poll_handler(*args, **kwargs):

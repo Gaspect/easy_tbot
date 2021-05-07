@@ -1,4 +1,4 @@
-from ._wrapperfactory import create_wrapper
+from ._wrapper_factory import create_wrapper
 from ..handlers.channel_post import ChanelPostHandler, EditedChanelPostHandler
 
 def chanel_post_handler(*args, **kwargs):

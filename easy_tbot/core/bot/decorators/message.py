@@ -1,4 +1,4 @@
-from ._wrapperfactory import create_wrapper
+from ._wrapper_factory import create_wrapper
 from ..handlers.message import MessageHandler, EditedMessageHandler
 
 def message_handler(*args, **kwargs):

@@ -1,4 +1,4 @@
-from ._wrapperfactory  import create_wrapper
+from ._wrapper_factory  import create_wrapper
 from ..handlers.query import CallbackQueryHandler, ShippingQueryHandler, PreCheckoutQueryHandler
 
 def callback_query_handler(*args, **kwargs):
