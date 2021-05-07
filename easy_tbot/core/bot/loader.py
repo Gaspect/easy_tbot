@@ -1,12 +1,15 @@
+from abc import ABCMeta
 import inspect
-from six import with_metaclass
 from importlib import import_module
 from .backend import Backend
-from .handlers.base import SetupMixin
+from .setups.base import SetupMixin
 from ..settings import Settings
-from .._meta_singleton import ABCMetaSingleton
+from ..tools.meta import MultiMeta
+from ..tools.meta_singleton import MetaSingleton
 
-class Bot(with_metaclass(ABCMetaSingleton, Backend)):
+
+
+class Bot(MultiMeta[ABCMeta, MetaSingleton, Backend ]):
 
     def __init__(self):
         settings = Settings()

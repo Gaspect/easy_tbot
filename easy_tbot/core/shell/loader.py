@@ -1,12 +1,14 @@
+
 import inspect
-from six import with_metaclass
+from abc import ABCMeta
 from importlib import import_module
 from .backend import Backend
 from ..settings import Settings
-from .._meta_singleton import ABCMetaSingleton
+from ..tools.meta import MultiMeta
+from ..tools.meta_singleton import MetaSingleton
 
 
-class Shell(with_metaclass(ABCMetaSingleton, Backend)):
+class Shell(MultiMeta[ABCMeta, MetaSingleton, Backend ]):
 
     def __init__(self):
         settings  = Settings()

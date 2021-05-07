@@ -1,12 +1,13 @@
-from six import with_metaclass
+from abc import ABCMeta
 from .backend import Backend
 from ..settings import Settings
-from .._meta_singleton import ABCMetaSingleton
+from ..tools.meta import MultiMeta
+from ..tools.meta_singleton import MetaSingleton
 
 
-class DataBase(with_metaclass(ABCMetaSingleton, Backend)):
+class DataBase(MultiMeta[ABCMeta, MetaSingleton, Backend ]):
+    
     def __init__(self):
-        # load here
         settings = Settings()
 
         if not issubclass(settings.DB['backend'], Backend):

@@ -1,9 +1,11 @@
-from six import with_metaclass
+from abc import ABCMeta
 from .backend import Backend
 from ..settings import Settings
-from .._meta_singleton import ABCMetaSingleton
+from ..tools.meta import MultiMeta
+from ..tools.meta_singleton import MetaSingleton
 
-class TemplateEngine(with_metaclass(ABCMetaSingleton, Backend)):
+
+class TemplateEngine(MultiMeta[ABCMeta, MetaSingleton, Backend ]):
     
     def __init__(self):
         settings = Settings()
